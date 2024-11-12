@@ -41,11 +41,17 @@ export const getEntries = {
           throw error;
         }
       },
+      addComment: async(idUser:string,idExp:string)=>{
+        return await user.findByIdAndUpdate(idUser,{$addToSet:{comment:idExp}});
+    },
 
     addProperty: async(idUser:string,idExp:string)=>{
         return await user.findByIdAndUpdate(idUser,{$addToSet:{property:idExp}});
     },
     delProperty: async(idUser:string,idExp:string)=>{
         return await user.findByIdAndUpdate(idUser,{$pull:{property:idExp}});
-    }
+    },
+    delComment: async(idUser:string,idExp:string)=>{
+      return await user.findByIdAndUpdate(idUser,{$pull:{comment:idExp}});
+  }
 }

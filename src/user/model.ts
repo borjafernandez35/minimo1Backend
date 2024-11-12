@@ -9,7 +9,8 @@ export interface IUser{
     password: string,
     //avatar?:string,
     //comment: string,
-    property?: ObjectId[]
+    property?: ObjectId[],
+    coment?:ObjectId[]
 }
 //export type UsersInterfacePublicInfo = Pick<usersInterface, 'id' | 'name' | 'comment'>
 //export type newUserInfo = Omit<usersInterface>
